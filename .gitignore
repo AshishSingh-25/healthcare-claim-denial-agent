@@ -5,3 +5,6 @@ __pycache__/
 .venv/
 *.log
 .streamlit/secrets.toml
+node_modules/
+dist/
+.vercel/

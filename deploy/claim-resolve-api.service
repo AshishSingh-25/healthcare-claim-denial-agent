@@ -1,0 +1,23 @@
+[Unit]
+Description=Claim Resolve synthetic claim API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/healthcare-claim-denial-agent
+ExecStart=/home/ubuntu/healthcare-claim-denial-agent/.venv/bin/uvicorn backend.api:app --host 127.0.0.1 --port 8510 --no-access-log --limit-concurrency 32
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+Environment=LANGCHAIN_TRACING_V2=false
+Environment=LANGSMITH_TRACING=false
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+MemoryMax=512M
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
