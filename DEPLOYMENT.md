@@ -50,7 +50,8 @@ Run `python -m unittest discover -s tests -v` from the repository root.
 - Backend: https://claims-api.droidrex.me (Cloudflare Tunnel to `http://127.0.0.1:8510`).
 - Production Vercel environment: `CLAIM_API_ORIGIN=https://claims-api.droidrex.me`.
 
-The backend health endpoint responds directly. At initial deployment Cloudflare returned
-HTTP 403 HTML to requests originating from Vercel, so end-to-end production use is pending
-a targeted Cloudflare security-rule adjustment. The proxy returns a readable 503 message
-for this case and logs response status and Cloudflare ray ID, never claim contents.
+Production verified on 2026-09-25: health checks, all seven sample-code options,
+and a CO-18 assessment succeed through the public Vercel API proxy.
+Cloudflare Bot Fight Mode originally challenged Vercel requests; the domain owner
+disabled that feature to allow the integration. Re-enabling it can block the API again.
+The proxy logs backend status and Cloudflare ray ID on non-JSON responses, never claim contents.
