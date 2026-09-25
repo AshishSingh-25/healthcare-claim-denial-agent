@@ -21,6 +21,11 @@ with open(_DATA_PATH, "r", encoding="utf-8") as f:
     _DENIAL_CODES = json.load(f)
 
 
+def list_denial_codes() -> dict[str, str]:
+    """Return available sample codes and labels from the reference library."""
+    return {code: entry["category"] for code, entry in _DENIAL_CODES.items()}
+
+
 def lookup_denial_code(denial_code: str) -> dict:
     """
     Look up a denial code in the local knowledge base.

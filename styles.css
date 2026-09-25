@@ -1,0 +1,51 @@
+/* Layout and presentation; Streamlit's theme owns native form controls. */
+.stApp { background: #f5f7fa; }
+.stMainBlockContainer { max-width: 1080px; padding: 2.5rem 2rem 3rem; }
+header[data-testid="stHeader"] { background: transparent; }
+[data-testid="stToolbar"] { display: none; }
+.brand { display:flex; align-items:center; gap:12px; padding-bottom:22px; border-bottom:1px solid #dde4ed; margin-bottom:28px; }
+.brand-icon { display:grid; place-items:center; width:36px; height:36px; background:#087f79; color:white; border-radius:10px; font-size:25px; font-weight:500; }
+.brand-name { color:#182b42; font-size:17px; font-weight:700; letter-spacing:-.4px; }
+.brand-note { margin-left:auto; color:#566779; font-size:12px; padding:5px 10px; border:1px solid #d9e2eb; border-radius:20px; background:#fff; }
+.intro h1 { color:#15283f; font-size:32px; font-weight:700; letter-spacing:-1px; margin:0 0 8px; padding:0; }
+.intro p { color:#607086; font-size:15px; line-height:1.6; margin:0 0 22px; }
+[data-testid="stForm"] { background:#fff; border:1px solid #dce4ed; border-radius:14px; padding:24px; box-shadow:0 3px 12px #182b4205; }
+.form-heading { display:flex; align-items:baseline; gap:10px; margin-bottom:2px; }
+.form-heading h2 { font-size:18px; font-weight:650; margin:0; padding:0; color:#182b42; }
+.form-heading span { color:#778599; font-size:12px; }
+[data-testid="stWidgetLabel"] p { font-size:13px; font-weight:500; }
+[data-testid="stTextInput"] input, [data-testid="stNumberInput"] input { min-height:44px; font-size:16px; }
+[data-testid="stSelectbox"] [role="combobox"] { min-height:30px; }
+[data-testid="stFormSubmitButton"] button { min-height:46px; border-radius:8px; font-weight:600; margin-top:4px; }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color:#607086; opacity:1; }
+[data-testid="stExpander"] { background:white; border-radius:10px; }
+.guide-row { padding:12px 0; border-bottom:1px solid #e9eef4; }
+.guide-row:last-child { border:0; }
+.guide-row strong { font-size:14px; color:#253e56; }
+.guide-row p { font-size:13px; color:#617286; margin:5px 0 0; line-height:1.6; }
+.results-heading { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; margin:18px 0 12px; }
+.results-heading h2 { font-size:22px; letter-spacing:-.4px; margin:0; padding:0; }
+.match { font-size:12px; color:#076f61; background:#e6f4ef; border-radius:20px; padding:5px 10px; }
+.result-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:18px; }
+.result-card { background:white; padding:22px; border:1px solid #dce4ed; border-radius:12px; min-width:0; }
+.result-card h3 { font-size:17px; color:#182b42; margin:0 0 14px; padding:0; }
+.result-card p,.result-card li { font-size:14px; color:#52657a; line-height:1.7; overflow-wrap:anywhere; }
+.result-card ul { padding-left:18px; margin-bottom:0; }
+.code-badge { display:inline-block; color:#086d68; background:#e7f4f2; font-size:12px; font-weight:650; padding:4px 8px; border-radius:5px; margin-bottom:10px; }
+.result-label { display:block; color:#778699; font-size:11px; letter-spacing:.06em; text-transform:uppercase; margin:16px 0 6px; }
+.next-action { border-left:3px solid #087f79; background:#f0f8f7; padding:12px 15px; border-radius:0 8px 8px 0; }
+.next-action p { margin:0; color:#2b5453; }
+.footer-note { color:#7a899b; text-align:center; font-size:12px; padding-top:18px; }
+@media (max-width:850px) {
+ .stMainBlockContainer { padding:1.75rem 1rem 2rem; }
+ [data-testid="stHorizontalBlock"] { flex-wrap:wrap; gap:16px; }
+ [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] { flex:1 1 100%; width:100%; min-width:0; }
+ .result-grid { grid-template-columns:1fr; }
+}
+@media (max-width:480px) {
+ .intro h1 { font-size:27px; }
+ [data-testid="stForm"],.result-card { padding:18px; }
+ .brand { gap:8px; margin-bottom:22px; }
+ .brand-note { font-size:10px; padding:4px 8px; }
+ .form-heading { flex-wrap:wrap; gap:4px 10px; }
+}
