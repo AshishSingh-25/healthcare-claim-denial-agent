@@ -1,0 +1,79 @@
+{
+  "CO-16": {
+    "denial_code": "CO-16",
+    "description": "Claim or service lacks information or contains submission errors required for processing.",
+    "category": "Missing Information",
+    "possible_causes": [
+      "Missing required claim information",
+      "Incomplete patient or provider details",
+      "Invalid or missing procedure information"
+    ],
+    "recommended_action": "Review the claim for missing or invalid information, verify all required fields and supporting documentation, correct the identified issues, and resubmit the claim."
+  },
+  "CO-18": {
+    "denial_code": "CO-18",
+    "description": "The submitted claim or service may be a duplicate of a previously processed claim.",
+    "category": "Duplicate Claim",
+    "possible_causes": [
+      "The same claim was submitted more than once",
+      "A corrected claim was submitted without the appropriate indicator",
+      "The payer already processed an identical claim"
+    ],
+    "recommended_action": "Check the claim history and verify whether the claim has already been processed. If the submission is a correction, follow the payer's corrected-claim procedure."
+  },
+  "CO-11": {
+    "denial_code": "CO-11",
+    "description": "The diagnosis code is inconsistent with the procedure performed.",
+    "category": "Coding Error",
+    "possible_causes": [
+      "Diagnosis code does not support medical necessity for the procedure",
+      "Incorrect diagnosis code was entered",
+      "Procedure code does not match the documented diagnosis"
+    ],
+    "recommended_action": "Review the documented diagnosis and procedure codes for consistency, correct any coding errors, and resubmit with supporting documentation if needed."
+  },
+  "CO-22": {
+    "denial_code": "CO-22",
+    "description": "This care may be covered by another payer per coordination of benefits.",
+    "category": "Coordination of Benefits",
+    "possible_causes": [
+      "Patient has multiple insurance plans",
+      "Primary payer has not yet been billed",
+      "Coordination of benefits information is outdated or missing"
+    ],
+    "recommended_action": "Verify the patient's coverage order, confirm which payer is primary, and resubmit to the correct payer or include primary payer's explanation of benefits."
+  },
+  "CO-29": {
+    "denial_code": "CO-29",
+    "description": "The time limit for filing the claim has expired.",
+    "category": "Timely Filing",
+    "possible_causes": [
+      "Claim was submitted after the payer's filing deadline",
+      "Delay in initial submission or resubmission",
+      "Missing proof of timely filing"
+    ],
+    "recommended_action": "Check the payer's timely filing limit and, if applicable, submit an appeal with proof of timely filing (e.g., original submission date or clearinghouse report)."
+  },
+  "CO-50": {
+    "denial_code": "CO-50",
+    "description": "These are non-covered services because this is not deemed a medical necessity by the payer.",
+    "category": "Medical Necessity",
+    "possible_causes": [
+      "Documentation does not support medical necessity",
+      "Service is not covered under the patient's plan for the diagnosis given",
+      "Missing prior authorization for a service that required it"
+    ],
+    "recommended_action": "Review medical necessity documentation, confirm payer coverage policy for the diagnosis/procedure combination, and consider an appeal with additional clinical documentation."
+  },
+  "CO-72": {
+    "denial_code": "CO-72",
+    "description": "The claim/service was denied because the payer determined that the information provided does not support the medical necessity of the service.",
+    "category": "Medical Necessity",
+    "possible_causes":[
+      "Insufficient clinical documentation to justify the service",
+      "Service is not considered medically necessary for the patient's condition",
+      "Prior authorization was not obtained for a service that required it"
+    ],
+    "recommended_action": "Review the clinical documentation and the diagnosis-to-service relationship, confirm whether prior authorization was required, and correct or supplement the claim documentation before resubmission or appeal."
+  }
+}
