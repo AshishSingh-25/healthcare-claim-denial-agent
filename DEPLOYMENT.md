@@ -31,7 +31,9 @@ The frontend calls same-origin `/api/*` functions; the Vercel proxy forwards onl
 three documented endpoints. This avoids cross-origin browser access and keeps backend
 configuration on the server. No `VITE_` environment variables or client secrets are needed.
 
-Run `npm ci`, `npm run build`, then `vercel --prod` from `frontend/` after setting the origin.
+Run `npm ci` and `npm run build` from `frontend/`. The linked Vercel project uses
+`frontend` as its Root Directory, so run `vercel --prod` from the repository root.
+GitHub deployments also build the `frontend` directory.
 A public backend origin must be available before publishing a functioning production UI.
 
 ## Local development and tests
@@ -40,3 +42,15 @@ Install `requirements-dev.txt` in the project virtual environment.
 Run `python -m uvicorn backend.api:app --host 127.0.0.1 --port 8510`.
 In `frontend/`, run `npm ci` then `npm run dev`. Vite proxies `/api` to the local backend.
 Run `python -m unittest discover -s tests -v` from the repository root.
+
+## Configured production addresses
+
+- Vercel project: `claim-resolve` in `ashish-8880`.
+- Frontend: https://claim-resolve-dun.vercel.app
+- Backend: https://claims-api.droidrex.me (Cloudflare Tunnel to `http://127.0.0.1:8510`).
+- Production Vercel environment: `CLAIM_API_ORIGIN=https://claims-api.droidrex.me`.
+
+The backend health endpoint responds directly. At initial deployment Cloudflare returned
+HTTP 403 HTML to requests originating from Vercel, so end-to-end production use is pending
+a targeted Cloudflare security-rule adjustment. The proxy returns a readable 503 message
+for this case and logs response status and Cloudflare ray ID, never claim contents.
